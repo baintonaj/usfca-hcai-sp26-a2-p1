@@ -8,7 +8,10 @@ const messagesContainer = document.getElementById("messages");
 const sendMessage = () => {
     const message = inputField.value.trim();
     if (message !== null && message !== "") {
-        messagesContainer.innerText += message + "\n";
+        const msg = document.createElement("div");
+        msg.textContent = message;
+        msg.style.textAlign = "right";
+        messagesContainer.appendChild(msg);
         inputField.value = "";
         messagesContainer.scrollTop = messagesContainer.scrollHeight; //auto scroll
     } else {
