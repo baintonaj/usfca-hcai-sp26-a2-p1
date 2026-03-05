@@ -10,6 +10,7 @@ const sendMessage = () => {
     if (message !== null && message !== "") {
         messagesContainer.innerText += message + "\n";
         inputField.value = "";
+        messagesContainer.scrollTop = messagesContainer.scrollHeight; //auto scroll
     } else {
         alert("Please enter a message");
     }
